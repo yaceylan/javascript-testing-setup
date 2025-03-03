@@ -1,0 +1,23 @@
+{
+  "name": "javascript-testing-setup",
+  "version": "1.0.0",
+  "description": "Ein einfaches Jest-Testing-Setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "displayName": "Ecommerce",
+    "globals": {
+      "PROJECT_NAME": "Ecommerce TD"
+    },
+    "bail": 20,
+    "verbose": true
+  }
+}
