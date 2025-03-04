@@ -4,13 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vitest --coverage"
+    "test": "vitest --coverage",
+    "test:precommit": "vitest run",
+    "test:coverage": "vitest --coverage",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@vitest/coverage-v8": "^3.0.7",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "vitest": "^3.0.7"
+  },
+  "lint-staged": {
+    "*.js": "vitest --coverage --relatedTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:precommit",
+      "pre-push": "npm run test"
+    }
   }
 }
