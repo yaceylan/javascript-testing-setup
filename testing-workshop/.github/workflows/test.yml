@@ -3,8 +3,8 @@ name: Run Tests
 on: [push, pull_request]
 
 jobs:
- unit-tests:
-    runs-on: ubuntu
+  unit-tests:
+    runs-on: ubuntu-latest 
 
     steps:
       - name: Checkout code
@@ -14,10 +14,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '23.5.0'
-      - run: npm ci
+          cache: 'npm' 
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci 
 
       - name: Run tests
         run: npm test
